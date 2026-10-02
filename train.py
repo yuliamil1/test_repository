@@ -3,8 +3,8 @@
 Используется для практики работы с Git.
 """
 from sklearn.datasets import load_iris
-from  import train_test_split
-import sklearn.ensemble
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 
 def main():
     X, y = load_iris(return_X_y=True)
@@ -12,7 +12,7 @@ def main():
         X, y, test_size=0.3, random_state=42
     )
 
-    model = sklearn.ensemble.RandomForestClassifier(max_depth=8, random_state=42)
+    model = RandomForestClassifier(max_depth=8, random_state=42)
     model.fit(X_train, y_train)
 
     score = model.score(X_test, y_test)
@@ -22,3 +22,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
