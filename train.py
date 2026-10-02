@@ -3,8 +3,8 @@
 Используется для практики работы с Git.
 """
 from sklearn.datasets import load_iris
-from import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier # type: ignore
 
 def main():
     X, y = load_iris(return_X_y=True)
